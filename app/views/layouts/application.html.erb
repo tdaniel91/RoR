@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RoR</title>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div id="secondBackground">
+
+  <!-- HEADER-->
+  <div id="header" >
+    <div id="leftHeader">
+      <a href="Home.html"><img src="images/banner_grey.png"  alt="Logo" /></a>
+    </div>
+    <div id="rightHeader">
+      <h1 class="textColorTop">Bem vindo!</h1>
+      <a href="#login-box" class="login-window" style="text-decoration: none;">Entrar</a>
+      <p class="textColorTop">/</p>
+      <a href="#register-box" class="register-window" style="text-decoration: none;">Registar-se</a>
+    </div>
+  </div>
+  <!-- FIM-HEADER-->
+
+  <div id="menu">
+    <ul id="nav">
+      <li><img src="images/home.png" width="20" alt="Home"/><a href="Home.html"> Home</a></li>
+      <li></li>
+    </ul>
+
+  </div>
+  <div id="article">
+
+
+
+    <%= yield %>
+
+
+
+
+  </div>
+  <div id="feed">
+    <img src="images/feed.png" width="30" alt="feed" /><h1>Feed de notícias</h1>
+    <h2>O Lorem Ipsum</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <hr/>
+    <h2>Rick Roll - Lyrics</h2>
+    <p>Never gonna give you up<br/>
+      Never gonna let you down<br/>
+      Never gonna run around and desert you<br/>
+      Never gonna make you cry <br/>
+      Never gonna say goodbye<br/>
+      Never gonna tell a lie and hurt you
+    </p>
+    <hr/>
+  </div>
+  <!-- FOOTER -->
+  <div id="footer" >
+    João Campos e Tiago Daniel  ||
+    <a href="About us" class="aboutus">Sobre nós</a>
+  </div>
+  <!-- FIM-FOOTER -->
+
+
+  <!-- Register Menu Div -->
+  <div id="register-box" class="popup">
+    <a href="#" class="close" id="close-reg"><img src="images/close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <p id="reg-text">Registar-se</p>
+    <hr/>
+    <div id="labelRegPop">
+      <label for="usernameRPop"><img src="images/username.png" width="20" alt="userPop"/> Utilizador:</label>
+      <label for="passwordRPop"><img src="images/key.png" width="20" alt="passwordPop" /> Password:</label>
+      <label for="emailPop"><img src="images/envelope.png" width="20" alt="emailPop" /> Email:</label>
+      <label for="daydropdown"><img src="images/calendar.png" width="20" alt="calendarpop" /> Data de Nascimento:</label>
+    </div>
+    <div id="textRegPop">
+      <input id="usernameRPop" type="text" name="username" size="30"/><br/>
+      <input type="password" name="password" id="passwordRPop" size="30"/><br/>
+      <input id="emailPop" type="text" name="email" size="30"/><br/>
+      <select id="daydropdown1"><option value=""></option></select>
+      <select id="monthdropdown1"><option value=""></option></select>
+      <select id="yeardropdown1"><option value=""></option></select><br/>
+    </div><br/>
+    <a href="redirect.html" class="submitRegisto">Submeter</a>
+    <script type="text/javascript">
+        window.onload=function(){
+            populatedropdown("daydropdown1", "monthdropdown1", "yeardropdown1");
+            populatedropdown("daydropdown", "monthdropdown", "yeardropdown");
+        }
+    </script>
+  </div>
+
+  <!-- Register form END -->
+  <!-- Login form -->
+  <div id="login-box" class="popup">
+    <a href="#" class="close" id="close-login"><img src="images/close.png" class="btn_close" title="Close Window" alt="Close" /></a>
+    <p id="loginTitle">Entrar</p>
+    <hr/>
+    <form action="">
+      <img src="images/username.png" width="20" alt="loginU" /><label for="username">Utilizador:</label><input id="username" name="username" type="text" /><br/>
+      <img src="images/key.png" width="20" alt="loginP" /><label for="password">Password:</label><input id="password" name="password" type="password" /><br/>
+      <a href="LoggedIn.html" id="subLogin">Entrar</a>
+    </form>
+  </div>
+  <!-- Login form END -->
+
+  <!-- Layer mask for the popups -->
+  <div id="mask"></div>
+</div>
+
+<p class="flag" ><a href="http://ctp.di.fct.unl.pt/lei/daweb/">ProjDAWeb</a></p>
+</body>
+</html>
